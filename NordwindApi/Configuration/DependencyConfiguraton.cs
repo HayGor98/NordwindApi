@@ -34,12 +34,16 @@ namespace NordwindApi.Configuration
             {typeof(ICategoryOperation),typeof(CategoryOperation) },
             {typeof(IShipperOperation),typeof(ShipperOperation) },
             {typeof(ISupplierOperation),typeof(SupplierOperation) },
-            {typeof(IUserOperation),typeof(UserOperation) },
-            {typeof(IMessageOperation),typeof(MessageOperation) },
+            {typeof(IEmployerOperation),typeof(EmployerOperation) },
+            {typeof(IEmployeeTerritoryOperation),typeof(EmployeeTerritoryOperation) },
             {typeof(IOrderDetailOperation),typeof(OrderDetailOperation) },
             {typeof(IOrderOperation),typeof(OrderOperation) },
             {typeof(IProductOperation),typeof(ProductOperation) },
-            {typeof(IRoleOperation),typeof(RoleOperation) }
+            {typeof(IRegionOperation),typeof(RegionOperation) },
+            {typeof(ITerritoryOperation),typeof(TerritoryOperation) },
+            {typeof(ICustomerCustomerDemoOperation),typeof(CustomerCustomerDemoOperation) },
+            {typeof(ICustomerDemographicOperation),typeof(CustomerDemographicOperation) },
+            {typeof(ICustomerOperation),typeof(CustomerOperation) },
         };
 
         private static readonly Dictionary<Type, Type> Repositories = new Dictionary<Type, Type>

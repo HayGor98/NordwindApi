@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace NordwindApi.BLL.Operations
 {
-    class ProductOperation : IProductOperation
+    public class ProductOperation : IProductOperation
     {
         private readonly IRepositoryManager _manager;
         private readonly IMapper _mapper;
