@@ -19,7 +19,9 @@ namespace NordwindApi
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http:/0,0,0,0:4987")
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseKestrel()
+                .UseUrls("http://0.0.0.0:5808")
                 .UseStartup<Startup>();
 
     }
