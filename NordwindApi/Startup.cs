@@ -12,8 +12,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using NordwindApi.Configuration;
 using NordwindApi.Core.Infrastructure.Profiles;
 using NordwindApi.DAL;
+using NordwindApi.Middlewares;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace NordwindApi
@@ -38,8 +40,11 @@ namespace NordwindApi
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "UGeek Store API" });
+                c.SwaggerDoc("v1", new Info { Title = "Nordwind  API" });
             });
+
+            services.AddDALServices();
+            services.AddBLLServices();
 
             var mappingConfig = new MapperConfiguration(mc =>
             {
@@ -54,15 +59,8 @@ namespace NordwindApi
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
+            app.UseMiddleware<ErrorHandlingMiddleware>();
+            
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

@@ -14,7 +14,7 @@ namespace NordwindApi
 
         public static NordwindContext DbContext { get; private set; }
 
-        public static Microsoft.AspNetCore.Hosting.IWebHost MigrateDatabase(this Microsoft.AspNetCore.Hosting.IWebHost webHost)
+        public static IWebHost MigrateDatabase(this IWebHost webHost)
         {
 
             using (var scope = webHost.Services.CreateScope())
