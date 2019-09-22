@@ -14,12 +14,14 @@ namespace NordwindApi
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            CreateWebHostBuilder(args).Build()
+                                      .MigrateDatabase()
+                                      .Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http:/0,0,0,0:4987")
+                .UseUrls("http://0.0.0.0:4987")
                 .UseStartup<Startup>();
 
     }
