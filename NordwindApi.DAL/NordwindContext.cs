@@ -27,9 +27,9 @@ namespace NordwindApi.DAL
 
 
 
-        public NordwindContext (DbContextOptions options) : base(options)
-            {
-            }
+        public NordwindContext(DbContextOptions options) : base(options) { }
+        
+            
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
