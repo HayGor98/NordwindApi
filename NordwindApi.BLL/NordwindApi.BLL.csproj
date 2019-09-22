@@ -9,4 +9,8 @@
     <ProjectReference Include="..\NordwindApi.DAL\NordwindApi.DAL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Operations\" />
+  </ItemGroup>
+
 </Project>
