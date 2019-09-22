@@ -1,4 +1,7 @@
-﻿using NordwindApi.Core.Infrastructure.BllInterfaces;
+﻿using AutoMapper;
+using NordwindApi.Core.Entities;
+using NordwindApi.Core.Infrastructure.BllInterfaces;
+using NordwindApi.Core.Infrastructure.RepositoryAbstraction;
 using NordwindApi.Core.Models;
 using System;
 using System.Collections.Generic;
@@ -9,24 +12,39 @@ namespace NordwindApi.BLL.Operations
 {
     public class CategoryOperation : ICategoryOperation
     {
-        public Task AddCategory(CategoryModel model)
+        private readonly IRepositoryManager _manager;
+        private readonly IMapper _mapper;
+        public CategoryOperation(IRepositoryManager manager, IMapper mapper)
         {
-            throw new NotImplementedException();
+            this._manager = manager;
+            this._mapper = mapper;
+        }
+        public async  Task AddCategory(CategoryModel model)
+        {
+            var result = _mapper.Map<Category>(model);
+            _manager.Categories.Add(result);
+            await _manager.CompleteAsync();
         }
 
-        public Task DeleteCategory(long id)
+        public async Task DeleteCategory(long id)
         {
-            throw new NotImplementedException();
+            _manager.Categories.DeleteWhere(x => x.Id == id);
+           await _manager.CompleteAsync();
         }
 
-        public Task<CategoryModel> GetCategory(long id)
+        public  async Task<CategoryModel> GetCategory(long id)
         {
-            throw new NotImplementedException();
+            var category = await _manager.Categories.GetSingleAsync(x => x.Id == id);
+            var result = _mapper.Map<CategoryModel>(category);
+            return result;
         }
 
-        public Task UpdateCategory(CategoryModel model)
+        public async Task UpdateCategory(CategoryModel model)
         {
-            throw new NotImplementedException();
+            var result = _mapper.Map<Category>(model);
+            _manager.Categories.Update(result);
+
+            await _manager.CompleteAsync();
         }
     }
 }

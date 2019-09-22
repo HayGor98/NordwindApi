@@ -8,9 +8,9 @@ namespace NordwindApi.Core.Infrastructure.BllInterfaces
 {
     public interface IOrderDetailOperation
     {
-        Task<OrderDetailModel> GetOrderDetail(long id);
+        Task<OrderDetailModel> GetOrderDetail(long OrderID, long ProductID);
         Task AddOrderDetail(OrderDetailModel model);
         Task UpdateOrderDetail(OrderDetailModel model);
-        Task DeleteOrderDetail(long id);
+        Task DeleteOrderDetail(long OrderID, long ProductID);
     }
 }

@@ -8,9 +8,9 @@ namespace NordwindApi.Core.Infrastructure.BllInterfaces
 {
     public interface ICustomerCustomerDemoOperation
     {
-        Task<CustomerCustomerDemoModel> GetCustomerCustomerDemo(long id);
+        Task<CustomerCustomerDemoModel> GetCustomerCustomerDemo(long CustomerID, long CustomerTypeID);
         Task AddCustomerCustomerDemo(CustomerCustomerDemoModel model);
         Task UpdateCustomerCustomerDemo(CustomerCustomerDemoModel model);
-        Task DeleteCustomerCustomerDemo(long id);
+        Task DeleteCustomerCustomerDemo(long CustomerID, long CustomerTypeID);
     }
 }

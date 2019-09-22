@@ -11,6 +11,6 @@ namespace NordwindApi.Core.Infrastructure.BllInterfaces
         Task<ShipperModel> GetShipper(long id);
         Task AddShipper(ShipperModel model);
         Task UpdateShipper(ShipperModel model);
-        Task DeleteShipper(ShipperModel model);
+        Task DeleteShipper(long id );
     }
 }
