@@ -8,9 +8,9 @@ namespace NordwindApi.Core.Infrastructure.BllInterfaces
 {
     public interface IEmployeeTerritoryOperation
     {
-        Task<EmployeeTerritoryModel> GetEmployeeTerritory(long id);
+        Task<EmployeeTerritoryModel> GetEmployeeTerritory(long EmployeeID, long TeritoryID);
         Task AddEmployeeTerritory(EmployeeTerritoryModel model);
         Task UpdateEmployeeTerritory(EmployeeTerritoryModel model);
-        Task DeleteEmployeeTerritory(long id);
+        Task DeleteEmployeeTerritory(long EmployeeID, long TeritoryID);
     }
 }

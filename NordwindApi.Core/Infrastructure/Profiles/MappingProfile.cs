@@ -9,7 +9,7 @@ namespace NordwindApi.Core.Infrastructure.Profiles
     {
         public MappingProfile()
         {
-            
+           
         }
     }
 }
