@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NordwindApi.Core\NordwindApi.Core.csproj" />
+    <ProjectReference Include="..\NordwindApi.DAL\NordwindApi.DAL.csproj" />
+  </ItemGroup>
+
+</Project>
