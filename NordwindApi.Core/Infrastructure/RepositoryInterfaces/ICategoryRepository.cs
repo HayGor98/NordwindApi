@@ -8,5 +8,6 @@ namespace NordwindApi.Core.Infrastructure.RepositoryInterfaces
 {
     public interface ICategoryRepository:IRepositoryBase<Category>
     {
+
     }
 }
